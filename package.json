@@ -1,0 +1,45 @@
+{
+  "name": "bool",
+  "description": "I'm a lazy",
+  "homepage": "https://github.com/Kikobeats/bool",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Kiko Beats",
+    "email": "josefrancisco.verdu@gmail.com",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/bool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/bool/issues"
+  },
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "latest",
+    "git-dirty": "latest",
+    "jison": "~0.4.17",
+    "jison-lex": "~0.3.4",
+    "mocha": "latest",
+    "nyc": "latest",
+    "should": "latest",
+    "standard": "latest"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard lib index.js",
+    "pretest": "npm run lint",
+    "test": "nyc mocha",
+    "build-parser": "jison src/parser.y -o lib/parser.js",
+    "build-lexer": "jison-lex src/lexer.y -o lib/lexer.js",
+    "build": "npm run-script build-parser && npm run-script build-lexer"
+  },
+  "license": "MIT"
+}
