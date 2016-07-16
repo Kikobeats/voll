@@ -3,13 +3,6 @@
 var lexer = require('../lib/lexer')
 var should = require('should')
 
-// var SyntaxError = require('../lib/SyntaxError')
-//
-// lexer.parseError = function (message, hash) {
-//   throw new SyntaxError(message, hash)
-// }
-//
-
 function lex () {
   return [lexer.lex(), lexer.yytext]
 }
