@@ -40,7 +40,7 @@
     "node": ">= 4"
   },
   "scripts": {
-    "build": "npm run-script build-parser && npm run-script build-lexer",
+    "build": "npm run build-parser && npm run build-lexer",
     "build-lexer": "jison-lex src/lexer.y -o lib/lexer.js",
     "build-parser": "jison src/parser.y -o lib/parser.js",
     "clean": "rm -rf node_modules",

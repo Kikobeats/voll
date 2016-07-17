@@ -11,12 +11,16 @@ plugins:
 
   postrelease:
 
+    'Compiling sources':
+      plugin: 'bumped-terminal'
+      command: 'npm run build'
+
     'Generating CHANGELOG file':
       plugin: 'bumped-changelog'
 
     'Commiting new version':
       plugin: 'bumped-terminal'
-      command: 'git add CHANGELOG.md package.json && git commit -m "Release $newVersion"'
+      command: 'git add CHANGELOG.md package.json lib/lexer.js lib/parser.js && git commit -m "Release $newVersion"'
 
     'Detecting problems before publish':
       plugin: 'bumped-terminal'
