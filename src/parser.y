@@ -30,7 +30,7 @@ expr
 var ast = require('./ast');
 
 // Install more detailed error reporting
-var SyntaxError = require('./SyntaxError');
+var SyntaxError = require('./syntax-error');
 parser.parseError = function parseError(message, hash) {
     throw new SyntaxError(message, hash);
 };

@@ -1,29 +1,29 @@
 'use strict'
 
-var Evaluator = require('../lib/evaluator')
+var evaluator = require('../lib/evaluator')
 var parser = require('../lib/parser')
 var should = require('should')
 
 describe('Parser', function () {
   it('only tag', function () {
     var expr = parser.parse('@a')
-    expr.accept(new Evaluator(), ['@a']).should.be.true()
-    expr.accept(new Evaluator(), ['@b']).should.be.false()
+    expr.accept(evaluator(), ['@a']).should.be.true()
+    expr.accept(evaluator(), ['@b']).should.be.false()
   })
 
   it('AND expression', function () {
     var expr = parser.parse('@a AND @b')
-    expr.accept(new Evaluator(), ['@a', '@b']).should.be.true()
-    expr.accept(new Evaluator(), ['@a']).should.be.false()
-    expr.accept(new Evaluator(), ['@b']).should.be.false()
-    expr.accept(new Evaluator(), []).should.be.false()
+    expr.accept(evaluator(), ['@a', '@b']).should.be.true()
+    expr.accept(evaluator(), ['@a']).should.be.false()
+    expr.accept(evaluator(), ['@b']).should.be.false()
+    expr.accept(evaluator(), []).should.be.false()
   })
 
   it('Does it all', function () {
     var expr = parser.parse('@a AND @b OR NOT @c')
-    expr.accept(new Evaluator(), ['@a', '@b']).should.be.true()
-    expr.accept(new Evaluator(), ['@c']).should.be.false()
-    expr.accept(new Evaluator(), []).should.be.true()
+    expr.accept(evaluator(), ['@a', '@b']).should.be.true()
+    expr.accept(evaluator(), ['@c']).should.be.false()
+    expr.accept(evaluator(), []).should.be.true()
   })
 
   it('double negation', function () {
@@ -32,14 +32,14 @@ describe('Parser', function () {
       '--@a'
     ].forEach(function (str) {
       var expr = parser.parse(str)
-      expr.accept(new Evaluator(), ['@a']).should.be.true()
-      expr.accept(new Evaluator(), ['@b']).should.be.false()
+      expr.accept(evaluator(), ['@a']).should.be.true()
+      expr.accept(evaluator(), ['@b']).should.be.false()
     })
   })
 
   it('tag syntax', function () {
     var expr = parser.parse('NOT@a1A')
-    expr.accept(new Evaluator(), ['@a1A']).should.be.false()
+    expr.accept(evaluator(), ['@a1A']).should.be.false()
   })
 
   it('throws exception on scanner error', function () {
