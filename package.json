@@ -23,6 +23,7 @@
     "git-dirty": "latest",
     "jison": "~0.4.17",
     "jison-lex": "~0.3.4",
+    "json-future": "~2.0.0",
     "mocha": "latest",
     "nyc": "latest",
     "should": "latest",

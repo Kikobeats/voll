@@ -1,0 +1,5 @@
+{
+  "expr": "a AND NOT b AND c",
+  "input": "a c",
+  "result": true
+}
