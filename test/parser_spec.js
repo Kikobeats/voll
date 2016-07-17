@@ -1,30 +1,29 @@
 'use strict'
 
-var parser = require('../lib/parser')
 var Evaluator = require('../lib/evaluator')
-var assert = require('assert')
+var parser = require('../lib/parser')
+var should = require('should')
 
 describe('Parser', function () {
   it('only tag', function () {
     var expr = parser.parse('@a')
-
-    assert.equal(true, expr.accept(new Evaluator(), ['@a']))
-    assert.equal(false, expr.accept(new Evaluator(), ['@b']))
+    expr.accept(new Evaluator(), ['@a']).should.be.true()
+    expr.accept(new Evaluator(), ['@b']).should.be.false()
   })
 
   it('AND expression', function () {
     var expr = parser.parse('@a AND @b')
-    assert.equal(true, expr.accept(new Evaluator(), ['@a', '@b']))
-    assert.equal(false, expr.accept(new Evaluator(), ['@a']))
-    assert.equal(false, expr.accept(new Evaluator(), ['@b']))
-    assert.equal(false, expr.accept(new Evaluator(), []))
+    expr.accept(new Evaluator(), ['@a', '@b']).should.be.true()
+    expr.accept(new Evaluator(), ['@a']).should.be.false()
+    expr.accept(new Evaluator(), ['@b']).should.be.false()
+    expr.accept(new Evaluator(), []).should.be.false()
   })
 
   it('Does it all', function () {
     var expr = parser.parse('@a AND @b OR NOT @c')
-    assert.equal(true, expr.accept(new Evaluator(), ['@a', '@b']))
-    assert.equal(false, expr.accept(new Evaluator(), ['@c']))
-    assert.equal(true, expr.accept(new Evaluator(), []))
+    expr.accept(new Evaluator(), ['@a', '@b']).should.be.true()
+    expr.accept(new Evaluator(), ['@c']).should.be.false()
+    expr.accept(new Evaluator(), []).should.be.true()
   })
 
   it('double negation', function () {
@@ -33,14 +32,14 @@ describe('Parser', function () {
       '--@a'
     ].forEach(function (str) {
       var expr = parser.parse(str)
-      assert.equal(true, expr.accept(new Evaluator(), ['@a']))
-      assert.equal(false, expr.accept(new Evaluator(), ['@b']))
+      expr.accept(new Evaluator(), ['@a']).should.be.true()
+      expr.accept(new Evaluator(), ['@b']).should.be.false()
     })
   })
 
   it('tag syntax', function () {
     var expr = parser.parse('NOT@a1A')
-    assert.equal(false, expr.accept(new Evaluator(), ['@a1A']))
+    expr.accept(new Evaluator(), ['@a1A']).should.be.false()
   })
 
   it('throws exception on scanner error', function () {
@@ -54,16 +53,16 @@ describe('Parser', function () {
       )
       throw new Error('should fail')
     } catch(expected) {
-      assert.equal(
+      expected.message.should.be.equal(
         'Lexical error on line 4. Unrecognized text.\n' +
         '...      a           ^     \n' +
         '---------------------^'
-        , expected.message)
-      assert.deepEqual({
+      )
+      expected.hash.should.be.eql({
         text: '',
         token: null,
         line: 3 // Jison lines are zero-indexed.
-      }, expected.hash)
+      })
     }
   })
 
@@ -81,19 +80,19 @@ describe('Parser', function () {
       )
       throw new Error('should fail')
     } catch (expected) {
-      assert.equal(
+      expected.message.should.be.equal(
         'Parse error on line 6:\n' +
         '...     c          AND\n' +
         '----------------------^\n' +
         "Expecting 'TOKEN_VAR', 'TOKEN_NOT', 'TOKEN_LPAREN', got 'EOF'"
-        , expected.message)
-      assert.deepEqual({
+      )
+      expected.hash.should.be.eql({
         text: '',
         token: 'EOF',
         line: 5,
         loc: { first_line: 6, last_line: 6, first_column: 7, last_column: 10 },
         expected: [ "'TOKEN_VAR'", "'TOKEN_NOT'", "'TOKEN_LPAREN'" ]
-      }, expected.hash)
+      })
     }
   })
 })
