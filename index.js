@@ -3,7 +3,7 @@
 var evaluator = require('./lib/evaluator')
 var parse = require('./lib/parser').parse
 
-function Bool (expr) {
+function voll (expr) {
   expr = parse(expr)
 
   function bool (input) {
@@ -13,4 +13,4 @@ function Bool (expr) {
   return bool
 }
 
-module.exports = Bool
+module.exports = voll

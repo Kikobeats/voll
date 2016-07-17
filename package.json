@@ -1,7 +1,7 @@
 {
-  "name": "bool",
-  "description": "I'm a lazy",
-  "homepage": "https://github.com/Kikobeats/bool",
+  "name": "voll",
+  "description": "boolean expression parser/interpreter",
+  "homepage": "https://github.com/Kikobeats/voll",
   "version": "0.0.0",
   "main": "index.js",
   "author": {
@@ -11,12 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kikobeats/bool.git"
+    "url": "git+https://github.com/kikobeats/voll.git"
   },
   "bugs": {
-    "url": "https://github.com/Kikobeats/bool/issues"
+    "url": "https://github.com/Kikobeats/voll/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "boolean",
+    "expression",
+    "parser",
+    "interpreter"
+  ],
   "dependencies": {},
   "devDependencies": {
     "coveralls": "latest",
@@ -39,7 +44,7 @@
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard lib index.js",
-    "pretest": "npm run lint",
+    "pretest": "npm run lint && npm run build",
     "test": "nyc mocha"
   },
   "license": "MIT",
