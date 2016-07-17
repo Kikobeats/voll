@@ -1,5 +1,8 @@
-{
-  "expr": "'tech support'",
-  "input": "'tech support'",
-  "result": true
-}
+[
+  {
+    "expr": "'tech support'",
+    "input": "tech support",
+    "result": true
+  }
+
+]

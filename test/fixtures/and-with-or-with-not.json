@@ -1,5 +1,7 @@
-{
-  "expr": "a AND b AND (NOT c OR NOT d)",
-  "input": "a b",
-  "result": true
-}
+[
+  {
+    "expr": "a AND b AND (NOT c OR NOT d)",
+    "input": "a b",
+    "result": true
+  }
+]

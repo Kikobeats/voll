@@ -12,8 +12,11 @@ describe('Bool', function () {
     it(file, function () {
       var filepath = path.join(dir, file)
       var content = jsonFuture.load(filepath)
-      var bool = Bool(content.expr)
-      bool(content.input).should.be.equal(content.result)
+
+      content.forEach(function (unitCase) {
+        var bool = Bool(unitCase.expr)
+        bool(unitCase.input).should.be.equal(unitCase.result)
+      })
     })
   })
 })

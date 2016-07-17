@@ -1,5 +1,8 @@
-{
-  "expr": "(red OR blue) AND (yellow OR orange)",
-  "input": "red orange",
-  "result": true
-}
+[
+  {
+    "expr": "(red OR blue) AND (yellow OR orange)",
+    "input": "red orange",
+    "result": true
+  }
+
+]

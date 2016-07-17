@@ -1,3 +1,6 @@
+WORD                  [A-Za-z0-9\u00C0-\u00FF_\-@]+
+QUOTE_WORD            \'[^\']+\'|\"[^\"]+\"
+
 %%
 
 \s+                   { /* skip whitespace */ }
@@ -10,7 +13,8 @@
 "NOT"                 { return 'TOKEN_NOT'; }
 "-"                   { yytext='NOT'; return 'TOKEN_NOT'; }
 
-[A-Za-z0-9_\-@]+      { return 'TOKEN_VAR'; }
+{QUOTE_WORD}          { yytext = yytext.replace(/["']/g, ''); return 'TOKEN_VAR'; }
+{WORD}                { return 'TOKEN_VAR'; }
 
 "("                   { return 'TOKEN_LPAREN'; }
 ")"                   { return 'TOKEN_RPAREN'; }
