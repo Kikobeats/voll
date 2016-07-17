@@ -17,10 +17,12 @@
     "url": "https://github.com/Kikobeats/voll/issues"
   },
   "keywords": [
+    "bool",
     "boolean",
+    "evaluator",
     "expression",
-    "parser",
-    "interpreter"
+    "interpreter",
+    "parser"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -35,7 +37,7 @@
     "standard": "latest"
   },
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 4"
   },
   "scripts": {
     "build": "npm run-script build-parser && npm run-script build-lexer",
