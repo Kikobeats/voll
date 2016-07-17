@@ -32,14 +32,20 @@
     "node": ">= 0.10"
   },
   "scripts": {
+    "build": "npm run-script build-parser && npm run-script build-lexer",
+    "build-lexer": "jison-lex src/lexer.y -o lib/lexer.js",
+    "build-parser": "jison src/parser.y -o lib/parser.js",
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard lib index.js",
     "pretest": "npm run lint",
-    "test": "nyc mocha",
-    "build-parser": "jison src/parser.y -o lib/parser.js",
-    "build-lexer": "jison-lex src/lexer.y -o lib/lexer.js",
-    "build": "npm run-script build-parser && npm run-script build-lexer"
+    "test": "nyc mocha"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  }
 }
