@@ -13,14 +13,16 @@ QUOTE_WORD            ["'][^\'"]+['"]
 "NOT"                 { return 'TOKEN_NOT'; }
 "-"                   { yytext='NOT'; return 'TOKEN_NOT'; }
 
-{QUOTE_WORD}          { yytext = yytext.replace(/["']/g, ''); return 'TOKEN_VAR'; }
-{WORD}                { return 'TOKEN_VAR'; }
-
 "("                   { return 'TOKEN_LPAREN'; }
 ")"                   { return 'TOKEN_RPAREN'; }
+
+{QUOTE_WORD}          { yytext = yytext.replace(quoteRegex, ''); return 'TOKEN_VAR'; }
+{WORD}                { return 'TOKEN_VAR'; }
 
 <<EOF>>               { return 'EOF'; }
 
 %%
+
+quoteRegex = /["']/g
 
 module.exports = lexer;
