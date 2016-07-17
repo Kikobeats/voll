@@ -1,6 +1,6 @@
 {
   "name": "voll",
-  "description": "boolean expression parser/interpreter",
+  "description": "Boolean expressions evaluator.",
   "homepage": "https://github.com/Kikobeats/voll",
   "version": "0.0.0",
   "main": "index.js",

@@ -8,7 +8,13 @@
 [![NPM Status](https://img.shields.io/npm/dm/voll.svg?style=flat-square)](https://www.npmjs.org/package/voll)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Simple boolean expression evaluator.
+> Boolean expressions evaluator.
+
+voll is based mayority [bool](https://www.npmjs.com/package/bool) but improved in some aspects:
+
+- Detect words based on unicode ranges.
+- Detect quotes words using scape quotes (`'` or `"`) for exact matches.
+- Add operators alias (example: `red+yellow`).
 
 ## Install
 
@@ -20,7 +26,6 @@ $ npm install voll --save
 
 ```js
 var voll = require('voll')
-
 var test = voll('(red OR blue) AND (orange OR yellow)')
 
 test('red') //=> false
@@ -30,31 +35,22 @@ test('red yellow') //=> true
 
 ## Operators
 
-| Operator | Description |
+| Operator | Alias |
 |----------|-------------|
-| AND      |             |
-| OR, +    |             |
-| NOT, -   |             |
+| `AND`    |             |
+| `OR`     | `+`         |
+| `NOT`    | `-`         |
 
 ## API
 
-### voll(input, [options])
+### voll(expr)
 
-#### input
+#### expr
 
 *Required*
 Type: `string`
 
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `vollean`
-Default: `false`
-
-Lorem ipsum.
+Boolean expression to be evaluated.
 
 ## License
 
