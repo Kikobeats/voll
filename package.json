@@ -24,7 +24,9 @@
     "interpreter",
     "parser"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "fast-memoize": "~2.0.2"
+  },
   "devDependencies": {
     "coveralls": "latest",
     "git-dirty": "latest",
