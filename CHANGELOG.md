@@ -1,3 +1,12 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2016-07-18)
+
+* Add cache level for improve speed ([858a156](https://github.com/kikobeats/voll/commit/858a156))
+* Fix insensitive support ([41514c0](https://github.com/kikobeats/voll/commit/41514c0))
+* Little refactor ([8fd8acd](https://github.com/kikobeats/voll/commit/8fd8acd))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2016-07-18)
 
