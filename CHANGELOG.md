@@ -1,3 +1,10 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2016-07-18)
+
+* Add insensitive comparison ([ac91c2b](https://github.com/kikobeats/voll/commit/ac91c2b))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-07-17)
 
