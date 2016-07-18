@@ -42,6 +42,13 @@ describe('Parser', function () {
     expr.accept(evaluator(), ['@a1A']).should.be.false()
   })
 
+  it('support insensitive comparison', function () {
+    var expr = parser.parse('@a AND @b OR NOT @c')
+    expr.accept(evaluator({insensitive: true}), ['@A', '@B']).should.be.true()
+    expr.accept(evaluator({insensitive: true}), ['@C']).should.be.false()
+    expr.accept(evaluator({insensitive: true}), []).should.be.true()
+  })
+
   it('throws exception on scanner error', function () {
     try {
       parser.parse( // line,token_start_col

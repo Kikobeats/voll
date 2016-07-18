@@ -12,6 +12,7 @@
 
 voll is based mayority [bool](https://www.npmjs.com/package/bool) but improved in some aspects:
 
+- Add insensitive comparison support.
 - Detect words based on unicode ranges.
 - Detect quotes words using scape quotes (`'` or `"`) for exact matches.
 - Add operators alias (example: `red+yellow`).
@@ -35,7 +36,7 @@ test('red yellow') //=> true
 
 ## Operators
 
-| Operator | Alias |
+| Operator | Alias       |
 |----------|-------------|
 | `AND`    |             |
 | `OR`     | `+`         |
@@ -43,7 +44,7 @@ test('red yellow') //=> true
 
 ## API
 
-### voll(expr)
+### voll(expr, [options])
 
 #### expr
 
@@ -51,6 +52,18 @@ test('red yellow') //=> true
 Type: `string`
 
 Boolean expression to be evaluated.
+
+#### options
+Type: `object`
+
+Provide specific parser options
+
+##### insensitive
+
+Type: `boolean`
+Default: `false`
+
+Enable insensitive comparison.
 
 ## License
 
