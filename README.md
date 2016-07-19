@@ -1,21 +1,22 @@
-# voll
+<h1 align="center">
+  <img src="logo.png" alt="voll" width="200">
+  <br>
+  Boolean expressions evaluator.
+  <br>
+  <br>
+</h1>
 
-![Last version](https://img.shields.io/github/tag/Kikobeats/voll.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/Kikobeats/voll/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/voll)
-[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/voll.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/voll)
-[![Dependency status](https://img.shields.io/david/Kikobeats/voll.svg?style=flat-square)](https://david-dm.org/Kikobeats/voll)
-[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/voll.svg?style=flat-square)](https://david-dm.org/Kikobeats/voll#info=devDependencies)
-[![NPM Status](https://img.shields.io/npm/dm/voll.svg?style=flat-square)](https://www.npmjs.org/package/voll)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
+<p align="center">
+  <img src="https://img.shields.io/github/tag/Kikobeats/voll.svg?style=flat-square" alt="Last version"> <a href="https://travis-ci.org/Kikobeats/voll"><img src="http://img.shields.io/travis/Kikobeats/voll/master.svg?style=flat-square" alt="Build Status"></a> <a href="https://coveralls.io/github/Kikobeats/voll"><img src="https://img.shields.io/coveralls/Kikobeats/voll.svg?style=flat-square" alt="Coverage Status"></a> <a href="https://paypal.me/kikobeats"><img src="https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square" alt="Donate"></a><br><a href="https://david-dm.org/Kikobeats/voll"><img src="http://img.shields.io/david/Kikobeats/voll.svg?style=flat-square" alt="Dependency status"></a> <a href="https://david-dm.org/Kikobeats/voll#info=devDependencies"><img src="http://img.shields.io/david/dev/Kikobeats/voll.svg?style=flat-square" alt="Dev Dependencies Status"></a> <a href="https://www.npmjs.org/package/voll"><img src="http://img.shields.io/npm/dm/voll.svg?style=flat-square" alt="NPM Status"></a>
+</p>
 
-> Boolean expressions evaluator.
+**voll** is based mayority [bool](https://www.npmjs.com/package/bool) but improved in some aspects:
 
-voll is based mayority [bool](https://www.npmjs.com/package/bool) but improved in some aspects:
-
-- Add insensitive comparison support.
+- Insensitive comparison support.
 - Detect words based on unicode ranges.
+- Caching level for speed up AST evaluation.
 - Detect quotes words using scape quotes (`'` or `"`) for exact matches.
-- Add operators alias (example: `red+yellow`).
+- Operators alias (example: `red+yellow` means the same than `red OR yellow`).
 
 ## Install
 
@@ -79,5 +80,7 @@ Type: `object`
 Provide specific cache options. See [mem#options](https://github.com/sindresorhus/mem#options).
 
 ## License
+
+Icon made by [Darius Dan](http://www.flaticon.com/free-icon/browser_173659) from [flaticon](http://www.flaticon.com/).
 
 MIT © [Kiko Beats](https://github.com/Kikobeats)
