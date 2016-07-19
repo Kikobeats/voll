@@ -63,7 +63,20 @@ Provide specific parser options
 Type: `boolean`
 Default: `false`
 
-Enable insensitive comparison.
+Enable/Disable insensitive comparison.
+
+##### cache
+
+Type: `boolean`
+Default: `true`
+
+Enable/Disable caching.
+
+##### cacheOpts
+
+Type: `object`
+
+Provide specific cache options. See [mem#options](https://github.com/sindresorhus/mem#options).
 
 ## License
 

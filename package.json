@@ -25,14 +25,14 @@
     "parser"
   ],
   "dependencies": {
-    "fast-memoize": "~2.0.2"
+    "mem": "~0.1.1"
   },
   "devDependencies": {
     "coveralls": "latest",
     "git-dirty": "latest",
-    "jison": "~0.4.17",
-    "jison-lex": "~0.3.4",
-    "json-future": "~2.0.0",
+    "jison": "latest",
+    "jison-lex": "latest",
+    "json-future": "latest",
     "mocha": "latest",
     "nyc": "latest",
     "should": "latest",
