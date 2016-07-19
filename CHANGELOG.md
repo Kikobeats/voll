@@ -1,3 +1,11 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2016-07-19)
+
+* Add docs ([df70b39](https://github.com/kikobeats/voll/commit/df70b39))
+* Improve caching ([ef732e7](https://github.com/kikobeats/voll/commit/ef732e7))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2016-07-18)
 
