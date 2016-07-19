@@ -35,6 +35,26 @@ test('yellow') //=> false
 test('red yellow') //=> true
 ```
 
+You can build complex expressions as you need. Use parentheses to specify the preference:
+
+```
+((red OR blue) AND NOT (orange OR yellow)) OR orange
+```
+
+In other case the preference is `left` to `right`. Also it handles malformed expressions. For example:
+
+```
+((red OR blue) AND NOT (orange yellow)) OR orange
+```
+
+Produces the follow error:
+
+```
+SyntaxError: Parse error on line 1:
+...ue) AND NOT (orange yellow)) OR orange
+-----------------------^
+```
+
 ## Operators
 
 | Operator | Alias       |
