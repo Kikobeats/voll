@@ -1,3 +1,11 @@
+<a name="1.2.1"></a>
+## 1.2.1 (2016-07-20)
+
+* Support dot for TOKEN_VAR ([82c4340](https://github.com/kikobeats/voll/commit/82c4340))
+* Update README.md ([18551ca](https://github.com/kikobeats/voll/commit/18551ca))
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2016-07-19)
 
