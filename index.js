@@ -3,14 +3,14 @@
 var evaluator = require('./lib/evaluator')
 var parse = require('./lib/parser').parse
 
-function voll (expr, params) {
+function createVoll (expr, params) {
   expr = parse(expr)
 
-  function bool (input) {
+  function voll (input) {
     return expr.accept(evaluator(params), input)
   }
 
-  return bool
+  return voll
 }
 
-module.exports = voll
+module.exports = createVoll
