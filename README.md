@@ -12,6 +12,7 @@
 
 **voll** is based mayority [bool](https://www.npmjs.com/package/bool) but improved in some aspects:
 
+- Exact word matching.
 - Insensitive comparison support.
 - Detect words based on unicode ranges.
 - Caching level for speed up AST evaluation.
