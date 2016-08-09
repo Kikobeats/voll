@@ -2,7 +2,7 @@
 
 var evaluator = require('../lib/evaluator')
 var parser = require('../lib/parser')
-var should = require('should')
+require('should')
 
 describe('Parser', function () {
   it('only tag', function () {
@@ -59,7 +59,7 @@ describe('Parser', function () {
       // 0123456789
       )
       throw new Error('should fail')
-    } catch(expected) {
+    } catch (expected) {
       expected.message.should.be.equal(
         'Lexical error on line 4. Unrecognized text.\n' +
         '...      a           ^     \n' +

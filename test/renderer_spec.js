@@ -1,6 +1,6 @@
 'use strict'
 
-var should = require('should')
+require('should')
 var parser = require('../lib/parser')
 var Renderer = require('../lib/renderer')
 

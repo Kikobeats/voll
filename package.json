@@ -47,7 +47,7 @@
     "build-parser": "jison src/parser.y -o lib/parser.js",
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "standard lib index.js",
+    "lint": "standard",
     "pretest": "npm run lint && npm run build",
     "test": "nyc mocha"
   },
@@ -56,6 +56,10 @@
     "globals": [
       "describe",
       "it"
+    ],
+    "ignore": [
+      "lib/parser.js",
+      "lib/lexer.js"
     ]
   }
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 var lexer = require('../lib/lexer')
-var should = require('should')
+require('should')
 
 function lex () {
   return [lexer.lex(), lexer.yytext]
