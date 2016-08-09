@@ -1,3 +1,13 @@
+<a name="1.2.2"></a>
+## 1.2.2 (2016-08-09)
+
+* Add exact word matching ([290ce5e](https://github.com/kikobeats/voll/commit/290ce5e))
+* Detect slash as word ([5432e46](https://github.com/kikobeats/voll/commit/5432e46))
+* Refactor testing scaffold ([00dcc0e](https://github.com/kikobeats/voll/commit/00dcc0e))
+* Rename ([7b12aa6](https://github.com/kikobeats/voll/commit/7b12aa6))
+
+
+
 <a name="1.2.1"></a>
 ## 1.2.1 (2016-07-20)
 
