@@ -1,4 +1,4 @@
-WORD                  [A-Za-z0-9\u00C0-\u00FF_\-\.@]+
+WORD                  [A-Za-z0-9\u00C0-\u00FF_\-\./@]+
 QUOTE_WORD            ["'][^\'"]+['"]
 
 %%

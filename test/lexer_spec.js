@@ -58,4 +58,72 @@ describe('Lexer', function () {
       lex().should.be.eql(tokenPair)
     })
   })
+
+  describe('VAR', function () {
+    it('detect simple word', function () {
+      lexer.setInput('hello')
+      lex().should.be.eql([ 'TOKEN_VAR', 'hello' ])
+    })
+
+    it('detect multiple words', function () {
+      [
+        '"hello world"',
+        "'hello world'"
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', 'hello world' ])
+      })
+    })
+
+    it('detect latin characters', function () {
+      [
+        'España',
+        'avión'
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', input ])
+      })
+    })
+
+    it('detect _', function () {
+      [
+        '__foo__bar__',
+        '__foo',
+        'bar__'
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', input ])
+      })
+    })
+
+    it('detect /', function () {
+      [
+        'ux/ui'
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', input ])
+      })
+    })
+
+    it('detect .', function () {
+      [
+        '.foobar',
+        'foo.bar',
+        'foobar.'
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', input ])
+      })
+    })
+
+    it('detect @', function () {
+      [
+        '@foo',
+        'b@r'
+      ].forEach(function (input) {
+        lexer.setInput(input)
+        lex().should.be.eql([ 'TOKEN_VAR', input ])
+      })
+    })
+  })
 })
