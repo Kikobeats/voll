@@ -1,3 +1,13 @@
+<a name="1.2.3"></a>
+## 1.2.3 (2017-07-18)
+
+* Fix lint ([2b6e9f7](https://github.com/kikobeats/voll/commit/2b6e9f7))
+* Update README.md ([eb008c8](https://github.com/kikobeats/voll/commit/eb008c8))
+* docs(readme): add Greenkeeper badge ([cd40f50](https://github.com/kikobeats/voll/commit/cd40f50))
+* chore(package): update mem to version 1.1.0 ([614b980](https://github.com/kikobeats/voll/commit/614b980))
+
+
+
 <a name="1.2.2"></a>
 ## 1.2.2 (2016-08-09)
 

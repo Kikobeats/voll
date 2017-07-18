@@ -2,11 +2,11 @@
   "name": "voll",
   "description": "Boolean expressions evaluator.",
   "homepage": "https://github.com/Kikobeats/voll",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "index.js",
   "author": {
-    "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
   "repository": {
@@ -58,8 +58,8 @@
       "it"
     ],
     "ignore": [
-      "lib/parser.js",
-      "lib/lexer.js"
+      "lib/lexer.js",
+      "lib/parser.js"
     ]
   }
 }
