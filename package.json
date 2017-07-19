@@ -1,7 +1,7 @@
 {
   "name": "voll",
   "description": "Boolean expressions evaluator.",
-  "homepage": "https://github.com/Kikobeats/voll",
+  "homepage": "https://documentup.com/kikobeats/voll",
   "version": "1.2.3",
   "main": "index.js",
   "author": {
