@@ -70,26 +70,27 @@ SyntaxError: Parse error on line 1:
 
 #### expr
 
-*Required*
+*Required*<br>
 Type: `string`
 
 Boolean expression to be evaluated.
 
 #### options
+
 Type: `object`
 
 Provide specific parser options
 
 ##### insensitive
 
-Type: `boolean`
+Type: `boolean`<br>
 Default: `false`
 
 Enable/Disable insensitive comparison.
 
 ##### cache
 
-Type: `boolean`
+Type: `boolean`<br>
 Default: `true`
 
 Enable/Disable caching.
