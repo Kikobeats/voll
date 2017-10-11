@@ -25,7 +25,7 @@
     "parser"
   ],
   "dependencies": {
-    "mem": "~2.0.0"
+    "mem": "~3.0.0"
   },
   "devDependencies": {
     "coveralls": "latest",
