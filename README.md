@@ -21,8 +21,6 @@
 
 ## Install
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Kikobeats/voll.svg)](https://greenkeeper.io/)
-
 ```bash
 $ npm install voll --save
 ```
