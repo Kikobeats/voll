@@ -1,3 +1,20 @@
+<a name="1.2.4"></a>
+## 1.2.4 (2018-08-28)
+
+* Meta tweaks ([df2db44](https://github.com/kikobeats/voll/commit/df2db44))
+* Update .travis.yml ([179e0e5](https://github.com/kikobeats/voll/commit/179e0e5))
+* Update compositor.json ([241ae73](https://github.com/kikobeats/voll/commit/241ae73))
+* Update compositor.json ([3004222](https://github.com/kikobeats/voll/commit/3004222))
+* Update package.json ([e921bb4](https://github.com/kikobeats/voll/commit/e921bb4))
+* Update README.md ([87339a8](https://github.com/kikobeats/voll/commit/87339a8))
+* Update README.md ([c164890](https://github.com/kikobeats/voll/commit/c164890))
+* fix(package): update mem to version 2.0.0 ([5af6272](https://github.com/kikobeats/voll/commit/5af6272))
+* fix(package): update mem to version 3.0.0 ([1b5934a](https://github.com/kikobeats/voll/commit/1b5934a))
+* fix(package): update mem to version 4.0.0 ([93c13b1](https://github.com/kikobeats/voll/commit/93c13b1))
+* docs(readme): add Greenkeeper badge ([2787a17](https://github.com/kikobeats/voll/commit/2787a17))
+
+
+
 <a name="1.2.3"></a>
 ## 1.2.3 (2017-07-18)
 
