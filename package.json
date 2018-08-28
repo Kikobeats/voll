@@ -16,6 +16,10 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/voll/issues"
   },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "keywords": [
     "bool",
     "boolean",
