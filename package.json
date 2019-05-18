@@ -2,7 +2,7 @@
   "name": "voll",
   "description": "Boolean expressions evaluator.",
   "homepage": "https://documentup.com/kikobeats/voll",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",

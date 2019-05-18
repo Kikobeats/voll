@@ -1,3 +1,17 @@
+<a name="1.2.5"></a>
+## 1.2.5 (2019-05-18)
+
+* build: update dependencies ([bfd208a](https://github.com/kikobeats/voll/commit/bfd208a))
+* fix: linter ([749ed1c](https://github.com/kikobeats/voll/commit/749ed1c))
+* fix(package): update mem to version 4.2.0 ([3ed078b](https://github.com/kikobeats/voll/commit/3ed078b))
+* fix(package): update mem to version 4.3.0 ([2e96cc1](https://github.com/kikobeats/voll/commit/2e96cc1))
+* [ImgBot] Optimize images ([f34bb88](https://github.com/kikobeats/voll/commit/f34bb88))
+* refactor style ([cabad7a](https://github.com/kikobeats/voll/commit/cabad7a))
+* Update compositor.json via compositor.io ([ecdfd18](https://github.com/kikobeats/voll/commit/ecdfd18))
+* Update README.md ([717ffdf](https://github.com/kikobeats/voll/commit/717ffdf))
+
+
+
 <a name="1.2.4"></a>
 ## 1.2.4 (2018-08-28)
 
