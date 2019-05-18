@@ -62,8 +62,7 @@
       "it"
     ],
     "ignore": [
-      "lib/lexer.js",
-      "lib/parser.js"
+      "lib"
     ]
   }
 }
