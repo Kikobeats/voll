@@ -11,9 +11,9 @@ describe('Lexer', function () {
   it('AND', function () {
     lexer.setInput('  a   AND  b  ')
     ;[
-      [ 'TOKEN_VAR', 'a' ],
-      [ 'TOKEN_AND', 'AND' ],
-      [ 'TOKEN_VAR', 'b' ]
+      ['TOKEN_VAR', 'a'],
+      ['TOKEN_AND', 'AND'],
+      ['TOKEN_VAR', 'b']
     ].forEach(function (tokenPair) {
       lex().should.be.eql(tokenPair)
     })
@@ -22,18 +22,18 @@ describe('Lexer', function () {
   it('OR', function () {
     lexer.setInput('  a   OR  b  ')
     ;[
-      [ 'TOKEN_VAR', 'a' ],
-      [ 'TOKEN_OR', 'OR' ],
-      [ 'TOKEN_VAR', 'b' ]
+      ['TOKEN_VAR', 'a'],
+      ['TOKEN_OR', 'OR'],
+      ['TOKEN_VAR', 'b']
     ].forEach(function (tokenPair) {
       lex().should.be.eql(tokenPair)
     })
 
     lexer.setInput('  a   +  b  ')
     ;[
-      [ 'TOKEN_VAR', 'a' ],
-      [ 'TOKEN_OR', 'OR' ],
-      [ 'TOKEN_VAR', 'b' ]
+      ['TOKEN_VAR', 'a'],
+      ['TOKEN_OR', 'OR'],
+      ['TOKEN_VAR', 'b']
     ].forEach(function (tokenPair) {
       lex().should.be.eql(tokenPair)
     })
@@ -42,18 +42,18 @@ describe('Lexer', function () {
   it('NOT', function () {
     lexer.setInput('  a   NOT  b  ')
     ;[
-      [ 'TOKEN_VAR', 'a' ],
-      [ 'TOKEN_NOT', 'NOT' ],
-      [ 'TOKEN_VAR', 'b' ]
+      ['TOKEN_VAR', 'a'],
+      ['TOKEN_NOT', 'NOT'],
+      ['TOKEN_VAR', 'b']
     ].forEach(function (tokenPair) {
       lex().should.be.eql(tokenPair)
     })
 
     lexer.setInput('  a   -  b  ')
     ;[
-      [ 'TOKEN_VAR', 'a' ],
-      [ 'TOKEN_NOT', 'NOT' ],
-      [ 'TOKEN_VAR', 'b' ]
+      ['TOKEN_VAR', 'a'],
+      ['TOKEN_NOT', 'NOT'],
+      ['TOKEN_VAR', 'b']
     ].forEach(function (tokenPair) {
       lex().should.be.eql(tokenPair)
     })
@@ -62,67 +62,48 @@ describe('Lexer', function () {
   describe('VAR', function () {
     it('detect simple word', function () {
       lexer.setInput('hello')
-      lex().should.be.eql([ 'TOKEN_VAR', 'hello' ])
+      lex().should.be.eql(['TOKEN_VAR', 'hello'])
     })
 
     it('detect multiple words', function () {
-      [
-        '"hello world"',
-        "'hello world'"
-      ].forEach(function (input) {
+      ;['"hello world"', "'hello world'"].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', 'hello world' ])
+        lex().should.be.eql(['TOKEN_VAR', 'hello world'])
       })
     })
 
     it('detect latin characters', function () {
-      [
-        'España',
-        'avión'
-      ].forEach(function (input) {
+      ;['España', 'avión'].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', input ])
+        lex().should.be.eql(['TOKEN_VAR', input])
       })
     })
 
     it('detect _', function () {
-      [
-        '__foo__bar__',
-        '__foo',
-        'bar__'
-      ].forEach(function (input) {
+      ;['__foo__bar__', '__foo', 'bar__'].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', input ])
+        lex().should.be.eql(['TOKEN_VAR', input])
       })
     })
 
     it('detect /', function () {
-      [
-        'ux/ui'
-      ].forEach(function (input) {
+      ;['ux/ui'].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', input ])
+        lex().should.be.eql(['TOKEN_VAR', input])
       })
     })
 
     it('detect .', function () {
-      [
-        '.foobar',
-        'foo.bar',
-        'foobar.'
-      ].forEach(function (input) {
+      ;['.foobar', 'foo.bar', 'foobar.'].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', input ])
+        lex().should.be.eql(['TOKEN_VAR', input])
       })
     })
 
     it('detect @', function () {
-      [
-        '@foo',
-        'b@r'
-      ].forEach(function (input) {
+      ;['@foo', 'b@r'].forEach(function (input) {
         lexer.setInput(input)
-        lex().should.be.eql([ 'TOKEN_VAR', input ])
+        lex().should.be.eql(['TOKEN_VAR', input])
       })
     })
   })
