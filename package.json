@@ -28,15 +28,25 @@
     "mem": "~6.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ci-publish": "latest",
+    "conventional-github-releaser": "latest",
     "coveralls": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
     "git-dirty": "latest",
+    "husky": "latest",
     "jison": "latest",
     "jison-lex": "latest",
     "json-future": "latest",
+    "lint-staged": "latest",
     "mocha": "latest",
+    "npm-check-updates": "latest",
     "nyc": "latest",
     "should": "latest",
-    "standard": "latest"
+    "standard": "latest",
+    "standard-version": "latest"
   },
   "engines": {
     "node": ">= 4"
@@ -50,12 +60,36 @@
     "build-lexer": "jison-lex src/lexer.y -o lib/lexer.js",
     "build-parser": "jison src/parser.y -o lib/parser.js",
     "clean": "rm -rf node_modules",
+    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard",
+    "postrelease": "npm run release:tags && npm run release:github && ci-publish",
+    "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint && npm run build",
-    "test": "nyc mocha"
+    "release": "standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
+    "test": "nyc mocha",
+    "update": "ncu -u",
+    "update:check": "ncu -- --error-level 2"
   },
   "license": "MIT",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "package.json": [
+      "finepack"
+    ]
+  },
   "standard": {
     "globals": [
       "describe",
