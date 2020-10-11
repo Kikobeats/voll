@@ -1,3 +1,20 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 1.2.6 (2020-10-11)
+
+
+### Bug Fixes
+
+* **package:** update mem to version 5.1.0 ([f35649a](https://github.com/kikobeats/voll/commit/f35649aac34f60d2e74e4d1625ab0b48f7ed9016))
+* linter ([749ed1c](https://github.com/kikobeats/voll/commit/749ed1c5e98db799444a89b6926364dcaa078baf))
+* **package:** update mem to version 2.0.0 ([5af6272](https://github.com/kikobeats/voll/commit/5af62721adec3f4537f3be0a58323b5c17bc03a5))
+* **package:** update mem to version 3.0.0 ([1b5934a](https://github.com/kikobeats/voll/commit/1b5934a718edb76266967daa273fded68a5d9a38))
+* **package:** update mem to version 4.0.0 ([93c13b1](https://github.com/kikobeats/voll/commit/93c13b173961631bebe43d35b2fed065e0fccb91))
+* **package:** update mem to version 4.2.0 ([3ed078b](https://github.com/kikobeats/voll/commit/3ed078b491f1a9ac287fe4271dafcd32f3ca9c13))
+* **package:** update mem to version 4.3.0 ([2e96cc1](https://github.com/kikobeats/voll/commit/2e96cc1453d4eee8553ba2dd4c69cfb1334444e4))
+
 <a name="1.2.5"></a>
 ## 1.2.5 (2019-05-18)
 
@@ -100,6 +117,3 @@
 * Update release process ([8a5f937](https://github.com/kikobeats/voll/commit/8a5f937))
 * Use should for testing instead of assert ([be6eb8c](https://github.com/kikobeats/voll/commit/be6eb8c))
 * WIP ([a907389](https://github.com/kikobeats/voll/commit/a907389))
-
-
-
