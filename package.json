@@ -25,7 +25,7 @@
     "parser"
   ],
   "dependencies": {
-    "mem": "~8.1.0"
+    "mem": "~9.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
